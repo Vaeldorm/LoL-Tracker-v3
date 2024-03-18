@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends Game Tracker</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .form-container {
+            width: 300px;
+            padding: 20px;
+            flex-grow: 0; /* Prevent the form container from growing */
+        }
+
+        .game-entries-container {
+            flex-grow: 1; /* Allow the game entries container to grow and fill remaining space */
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #FFA500;
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], textarea, select, input[type="submit"] {
+            background-color: #1E1E1E;
+            border: 1px solid #FFFFFF;
+            color: #FFFFFF;
+            padding: 8px;
+            margin: 5px auto;
+            border-radius: 5px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #FFA500;
+            color: #000000; /* Set text color to black */
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #FFFFFF;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #FFFFFF;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333333;
+            color: #FFA500;
+        }
+
+        tr:nth-child(even) {
+            background-color: #333333;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #1E1E1E;
+        }
+
+        select#outcome option {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-container">
+        <h1>League of Legends Game Tracker</h1>
+        <form action="/" method="post">
+            <label for="champion">Champion:</label>
+            <input type="text" id="champion" name="champion" required autofocus><br><br>
+            <label for="opponent">Opponent:</label>
+            <input type="text" id="opponent" name="opponent" required><br><br>
+            <label for="outcome">Outcome (Win/Loss):</label>
+            <select id="outcome" name="outcome">
+                <option value="Win">Win</option>
+                <option value="Loss">Loss</option>
+            </select><br><br>
+            <label for="notes">Notes:</label><br>
+            <textarea id="notes" name="notes" rows="4" cols="30"></textarea><br><br>
+            <label for="matchup_tips">Matchup Tips:</label><br>
+            <textarea id="matchup_tips" name="matchup_tips" rows="4" cols="30"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="game-entries-container">
+        <h2>Game Entries</h2>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Champion</th>
+                <th>Opponent</th>
+                <th>Outcome</th>
+                <th>Notes</th>
+                <th>Matchup Tips</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entry in entries %}
+            <tr>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.champion }}</td>
+                <td>{{ entry.opponent }}</td>
+                <td>{{ entry.outcome }}</td>
+                <td>{{ entry.notes }}</td>
+                <td>{{ entry.matchup_tips }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

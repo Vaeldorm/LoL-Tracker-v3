@@ -1,0 +1,10 @@
+[
+    {
+        "champion": "Test1", 
+        "opponent": "Test2", 
+        "outcome": "Win", 
+        "notes": "Type some things here", 
+        "matchup_tips": "Perhaps also type some things here", 
+        "date": "03-18-2024"
+    }
+]

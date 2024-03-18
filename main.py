@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 from flask import Flask, render_template, request, redirect
-import csv
 import time
 import os
+import json
 
 app = Flask(__name__)
 
@@ -42,49 +42,39 @@ class Entry:
 
 def load_entries():
     """
-    Load game entries from the master CSV file.
+    Load game entries from the master JSON file.
 
     Returns:
-        list: A list of Entry objects loaded from the CSV file.
+        list: A list of Entry objects loaded from the JSON file.
     """
     entries = []
-    master_filename = "tracker_master_entries.csv"
-    if os.path.exists(master_filename):
-        with open(master_filename, mode='r') as master_file:
-            reader = csv.DictReader(master_file)
-            for row in reader:
-                entry = Entry(
-                    champion=row['Champion'],
-                    opponent=row['Opponent'],
-                    outcome=row['Outcome'],
-                    notes=row['Notes'],
-                    matchup_tips=row['Matchup Tips'],
-                    date=row['Date']
-                )
-                entries.append(entry)
+    master_filename = "tracker_master_entries.json"
+    if os.path.exists(master_filename) and os.path.getsize(master_filename) > 0:
+        try:
+            with open(master_filename, mode='r') as master_file:
+                entries_data = json.load(master_file)
+                for entry_data in entries_data:
+                    entry = Entry(**entry_data)
+                    entries.append(entry)
+        except json.JSONDecodeError:
+            print("Error: Unable to parse JSON file. The file may contain invalid JSON data.")
     return entries
 
 
-def save_to_csv(entry):
+
+def save_to_json(entry):
     """
-    Save a game entry to the master CSV file.
+    Save a game entry to the master JSON file.
 
     Args:
         entry (Entry): The Entry object to be saved.
     """
-    master_filename = "tracker_master_entries.csv"
-    fieldnames = ["Date", "Champion", "Opponent", "Outcome", "Notes", "Matchup Tips"]
+    master_filename = "tracker_master_entries.json"
+    entries = load_entries()
+    entries.append(entry)
 
-    with open(master_filename, mode='a', newline='') as master_file:
-        writer = csv.DictWriter(master_file, fieldnames=fieldnames)
-        writer.writerow({
-            "Date": entry.date,
-            "Champion": entry.champion,
-            "Opponent": entry.opponent,
-            "Outcome": entry.outcome,
-            "Notes": entry.notes,
-            "Matchup Tips": entry.matchup_tips
-        })
+    with open(master_filename, mode='w') as master_file:
+        json.dump([vars(e) for e in entries], master_file, indent=4, separators=(", ", ": "))
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -97,7 +87,7 @@ def index():
         matchup_tips = request.form['matchup_tips']
         date = time.strftime("%m-%d-%Y")
         entry = Entry(champion=champion, opponent=opponent, outcome=outcome, notes=notes, matchup_tips=matchup_tips, date=date)
-        save_to_csv(entry)
+        save_to_json(entry)
         return redirect('/')
     else:
         entries = load_entries()
