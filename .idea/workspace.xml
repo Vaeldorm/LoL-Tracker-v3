@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59650138-86c4-427d-abb6-f6a56c091a09" name="Changes" comment="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv">
-      <change afterPath="$PROJECT_DIR$/.venv/Scripts/flask.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/favicon.ico.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracker.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracker_master_entries.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="59650138-86c4-427d-abb6-f6a56c091a09" name="Changes" comment="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv&#10;&#10;-- Implementing JSON uses, tweaked so that json input mimics PEP 8 principles and is easier on the  eyes. Implemented a favicon that is not currently functioning, need to troubleshoot.">
+      <change beforePath="$PROJECT_DIR$/.venv/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +83,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710774575367</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv">
+      <option name="closed" value="true" />
+      <created>1710787244026</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710787244026</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv&#10;&#10;-- Implementing JSON uses, tweaked so that json input mimics PEP 8 principles and is easier on the  eyes. Implemented a favicon that is not currently functioning, need to troubleshoot.">
+      <option name="closed" value="true" />
+      <created>1710787345792</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710787345792</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +116,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv" />
+    <MESSAGE value="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv&#10;&#10;-- Implementing JSON uses, tweaked so that json input mimics PEP 8 principles and is easier on the  eyes. Implemented a favicon that is not currently functioning, need to troubleshoot." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv&#10;&#10;-- Implementing JSON uses, tweaked so that json input mimics PEP 8 principles and is easier on the  eyes. Implemented a favicon that is not currently functioning, need to troubleshoot." />
   </component>
 </project>
