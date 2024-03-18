@@ -1,5 +1,6 @@
 # Specific files
 /tracker_master_entries.json/
+/tracker.bat/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
