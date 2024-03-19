@@ -1,6 +1,7 @@
 # Specific files
 /tracker_master_entries.json/
 /tracker.bat/
+/flask_app.py/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
