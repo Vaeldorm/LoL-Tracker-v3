@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3 feat
 
 from flask import Flask, render_template, request, redirect
 import time
@@ -20,7 +20,7 @@ class Entry:
         matchup_tips (str): Tips for the matchup.
     """
 
-    def __init__(self, champion="", opponent="", outcome="", notes="", matchup_tips="", date=""):
+    def __init__(self, champion="", opponent="", role="", outcome="", notes="", matchup_tips="", date=""):
         """
         Initializes an Entry object with optional attributes.
 
@@ -34,6 +34,7 @@ class Entry:
         """
         self.champion = champion
         self.opponent = opponent
+        self.role = role
         self.outcome = outcome
         self.notes = notes
         self.matchup_tips = matchup_tips
@@ -61,7 +62,6 @@ def load_entries():
     return entries
 
 
-
 def save_to_json(entry):
     """
     Save a game entry to the master JSON file.
@@ -82,11 +82,20 @@ def index():
     if request.method == 'POST':
         champion = request.form['champion']
         opponent = request.form['opponent']
+        role = request.form['role']
         outcome = request.form['outcome']
         notes = request.form['notes']
         matchup_tips = request.form['matchup_tips']
         date = time.strftime("%m-%d-%Y")
-        entry = Entry(champion=champion, opponent=opponent, outcome=outcome, notes=notes, matchup_tips=matchup_tips, date=date)
+        entry = Entry(
+            champion=champion,
+            opponent=opponent,
+            role=role,
+            outcome=outcome,
+            notes=notes,
+            matchup_tips=matchup_tips,
+            date=date
+        )
         save_to_json(entry)
         return redirect('/')
     else:
