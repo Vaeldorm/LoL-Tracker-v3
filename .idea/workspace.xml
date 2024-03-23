@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59650138-86c4-427d-abb6-f6a56c091a09" name="Changes" comment="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv&#10;&#10;-- Implementing JSON uses, tweaked so that json input mimics PEP 8 principles and is easier on the  eyes. Implemented a favicon that is not currently functioning, need to troubleshoot.">
-      <change beforePath="$PROJECT_DIR$/.venv/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/.gitignore" afterDir="false" />
+    <list default="true" id="59650138-86c4-427d-abb6-f6a56c091a09" name="Changes" comment="import flask_login and flask/session&#10;created LoginManager object and placeholder for secret key">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,14 +13,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="security/input-validation" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Vaeldorm"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Vaeldorm&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -32,9 +37,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/main.py" root0="SKIP_INSPECTION" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2drlTskKbIq7ILStBpHzcv9Oiw4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -50,7 +55,7 @@
     "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "feature/login",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -99,7 +104,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710787345792</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactor icon filename">
+      <option name="closed" value="true" />
+      <created>1711221908942</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711221908942</updated>
+    </task>
+    <task id="LOCAL-00005" summary="import flask_login and flask/session&#10;created LoginManager object and placeholder for secret key">
+      <option name="closed" value="true" />
+      <created>1711221969369</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711221969369</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +138,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv" />
     <MESSAGE value="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv&#10;&#10;-- Implementing JSON uses, tweaked so that json input mimics PEP 8 principles and is easier on the  eyes. Implemented a favicon that is not currently functioning, need to troubleshoot." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding files from v2 before reformatting code to support .json as primary form of data retention as an upgrade from using .csv&#10;&#10;-- Implementing JSON uses, tweaked so that json input mimics PEP 8 principles and is easier on the  eyes. Implemented a favicon that is not currently functioning, need to troubleshoot." />
+    <MESSAGE value="Refactor icon filename" />
+    <MESSAGE value="import flask_login and flask/session&#10;created LoginManager object and placeholder for secret key" />
+    <option name="LAST_COMMIT_MESSAGE" value="import flask_login and flask/session&#10;created LoginManager object and placeholder for secret key" />
   </component>
 </project>
