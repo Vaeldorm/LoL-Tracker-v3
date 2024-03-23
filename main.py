@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
+from flask_login import LoginManager
 import time
 import os
 import json
 
 app = Flask(__name__)
+# app.secret_key = b''
+login_manager = LoginManager()
 
 
 class Entry:
