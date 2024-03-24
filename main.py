@@ -1,12 +1,17 @@
 #!/usr/bin/env python3 feat
 
-from flask import Flask, render_template, request, redirect
-import time
-import os
+from flask import Flask, render_template, request, redirect, session
+from flask_login import login_manager
 import json
+import os
+import secrets
+import time
 
-app = Flask(__name__)
-
+app = Flask(__name__)                               # Create a Flask application instance
+top_secret_key = secrets.token_hex()                # Generate key used for session management, should be kept secret
+app.secret_key = f'{top_secret_key}'.encode()       # Set the secret key for the Flask application
+login_manager = LoginManager()                      # Create a LoginManager instance
+login_manager.init_app(app)                         # Initialize the LoginManager with the Flask application
 
 class Entry:
     """
