@@ -121,8 +121,8 @@
                 <option value="Loss">Loss</option>
             </select><br><br>
 
-            <label for="notes">Notes:</label><br>
-            <textarea id="notes" name="notes" rows="4" cols="30"></textarea><br><br>
+            <label for="match_notes">Match Notes:</label><br>
+            <textarea id="match_notes" name="match_notes" rows="4" cols="30"></textarea><br><br>
 
             <label for="matchup_tips">Matchup Tips:</label><br>
             <textarea id="matchup_tips" name="matchup_tips" rows="4" cols="30"></textarea><br><br>
@@ -140,7 +140,7 @@
                 <th>Opponent</th>
                 <th>Role</th>
                 <th>Outcome</th>
-                <th>Notes</th>
+                <th>Match Notes</th>
                 <th>Matchup Tips</th>
             </tr>
             </thead>
@@ -152,7 +152,7 @@
                 <td>{{ entry.opponent }}</td>
                 <td>{{ entry.role }}</td>
                 <td>{{ entry.outcome }}</td>
-                <td>{{ entry.notes }}</td>
+                <td>{{ entry.match_notes }}</td>
                 <td>{{ entry.matchup_tips }}</td>
             </tr>
             {% endfor %}
