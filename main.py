@@ -1,7 +1,7 @@
 #!/usr/bin/env python3 feat
 
 from flask import Flask, render_template, request, redirect, session
-from flask_login import login_manager
+from flask_login import LoginManager, login_user, logout_user
 import json
 import os
 import secrets
@@ -44,6 +44,13 @@ class Entry:
         self.notes = notes
         self.matchup_tips = matchup_tips
         self.date = date
+
+
+# TODO
+#   class User:
+#   def load_user():
+#   def login():
+#   def logout():
 
 
 def load_entries():
