@@ -1,7 +1,7 @@
 #!/usr/bin/env python3 feat
 
 from flask import Flask, render_template, request, redirect, session
-from flask_login import login_manager
+from flask_login import LoginManager, login_user, logout_user
 import json
 import os
 import secrets
@@ -12,6 +12,7 @@ top_secret_key = secrets.token_hex()                # Generate key used for sess
 app.secret_key = f'{top_secret_key}'.encode()       # Set the secret key for the Flask application
 login_manager = LoginManager()                      # Create a LoginManager instance
 login_manager.init_app(app)                         # Initialize the LoginManager with the Flask application
+
 
 class Entry:
     """
@@ -44,6 +45,24 @@ class Entry:
         self.notes = notes
         self.matchup_tips = matchup_tips
         self.date = date
+
+
+# TODO
+#   class User:
+#   def load_user():
+#   def login():
+#   def logout():
+
+
+class User:                                         # Choosing to make user class instead of use UserMixin?
+    def __init__(self, is_active, is_anonymous, user_id: str, is_authenticated=False):
+        self.is_active = is_active
+        self.is_anonynomous = is_anonymous
+        self.user_id = user_id
+        self.is_authenticated = is_authenticated
+
+    def get_id(self):                               # Must return a string
+        pass
 
 
 def load_entries():
