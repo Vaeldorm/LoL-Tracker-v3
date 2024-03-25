@@ -13,6 +13,7 @@ app.secret_key = f'{top_secret_key}'.encode()       # Set the secret key for the
 login_manager = LoginManager()                      # Create a LoginManager instance
 login_manager.init_app(app)                         # Initialize the LoginManager with the Flask application
 
+
 class Entry:
     """
     Represents a game entry for League of Legends.
@@ -51,6 +52,17 @@ class Entry:
 #   def load_user():
 #   def login():
 #   def logout():
+
+
+class User:                                         # Choosing to make user class instead of use UserMixin?
+    def __init__(self, is_active, is_anonymous, user_id: str, is_authenticated=False):
+        self.is_active = is_active
+        self.is_anonynomous = is_anonymous
+        self.user_id = user_id
+        self.is_authenticated = is_authenticated
+
+    def get_id(self):                               # Must return a string
+        pass
 
 
 def load_entries():
